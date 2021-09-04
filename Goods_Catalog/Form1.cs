@@ -16,5 +16,7 @@ namespace Goods_Catalog
         {
             InitializeComponent();
         }
+
+        
     }
 }
