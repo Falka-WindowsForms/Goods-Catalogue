@@ -17,6 +17,9 @@ namespace Goods_Catalog
             InitializeComponent();
         }
 
-        
+        private void exit_item_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

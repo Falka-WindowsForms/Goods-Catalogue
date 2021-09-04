@@ -47,6 +47,8 @@ namespace Goods_Catalog
             this.deleteProduct_item = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.author_button = new System.Windows.Forms.ToolStripMenuItem();
+            this.orders_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.manage_item = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox_filters = new System.Windows.Forms.GroupBox();
@@ -71,8 +73,6 @@ namespace Goods_Catalog
             this.label5 = new System.Windows.Forms.Label();
             this.name_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.orders_item = new System.Windows.Forms.ToolStripMenuItem();
-            this.manage_item = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_filters.SuspendLayout();
@@ -108,8 +108,9 @@ namespace Goods_Catalog
             // exit_item
             // 
             this.exit_item.Name = "exit_item";
-            this.exit_item.Size = new System.Drawing.Size(116, 26);
+            this.exit_item.Size = new System.Drawing.Size(224, 26);
             this.exit_item.Text = "&Exit";
+            this.exit_item.Click += new System.EventHandler(this.exit_item_Click);
             // 
             // categoriesToolStripMenuItem
             // 
@@ -206,8 +207,22 @@ namespace Goods_Catalog
             // author_button
             // 
             this.author_button.Name = "author_button";
-            this.author_button.Size = new System.Drawing.Size(224, 26);
+            this.author_button.Size = new System.Drawing.Size(137, 26);
             this.author_button.Text = "&Author";
+            // 
+            // orders_item
+            // 
+            this.orders_item.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manage_item});
+            this.orders_item.Name = "orders_item";
+            this.orders_item.Size = new System.Drawing.Size(67, 24);
+            this.orders_item.Text = "&Orders";
+            // 
+            // manage_item
+            // 
+            this.manage_item.Name = "manage_item";
+            this.manage_item.Size = new System.Drawing.Size(146, 26);
+            this.manage_item.Text = "&Manage";
             // 
             // pictureBox1
             // 
@@ -435,20 +450,6 @@ namespace Goods_Catalog
             this.label4.Size = new System.Drawing.Size(84, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "Name:";
-            // 
-            // orders_item
-            // 
-            this.orders_item.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manage_item});
-            this.orders_item.Name = "orders_item";
-            this.orders_item.Size = new System.Drawing.Size(67, 24);
-            this.orders_item.Text = "&Orders";
-            // 
-            // manage_item
-            // 
-            this.manage_item.Name = "manage_item";
-            this.manage_item.Size = new System.Drawing.Size(224, 26);
-            this.manage_item.Text = "&Manage";
             // 
             // Form1
             // 
