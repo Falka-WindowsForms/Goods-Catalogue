@@ -61,14 +61,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesEditor.Designer.cs">
+      <DependentUpon>CategoriesEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersEditor.Designer.cs">
+      <DependentUpon>OrdersEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProducersEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProducersEditor.Designer.cs">
+      <DependentUpon>ProducersEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsEditor.Designer.cs">
+      <DependentUpon>ProductsEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterWindow.Designer.cs">
+      <DependentUpon>RegisterWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersEditor.Designer.cs">
+      <DependentUpon>UsersEditor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

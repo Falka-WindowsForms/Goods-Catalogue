@@ -32,37 +32,30 @@ namespace Goods_Catalog
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exit_item = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.producersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoryCreate_item = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCategory_item = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCategory_item = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.producersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProducers_item = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProducers_item = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProducers_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProducts_item = new System.Windows.Forms.ToolStripMenuItem();
             this.updateProduct_item = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteProduct_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.author_button = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox_filters = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.category_comboBox = new System.Windows.Forms.ComboBox();
+            this.select_button = new System.Windows.Forms.Button();
             this.manufacturer_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.select_button = new System.Windows.Forms.Button();
+            this.category_comboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.name_textBox = new System.Windows.Forms.TextBox();
-            this.price_textBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.inStock_textBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.order_button = new System.Windows.Forms.Button();
             this.Goods_list = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -70,7 +63,16 @@ namespace Goods_Catalog
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.exit_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.order_button = new System.Windows.Forms.Button();
+            this.inStock_textBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.price_textBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.name_textBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.orders_item = new System.Windows.Forms.ToolStripMenuItem();
+            this.manage_item = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_filters.SuspendLayout();
@@ -86,7 +88,8 @@ namespace Goods_Catalog
             this.categoriesToolStripMenuItem,
             this.producersToolStripMenuItem,
             this.productsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.orders_item});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
@@ -102,6 +105,12 @@ namespace Goods_Catalog
             this.programmToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.programmToolStripMenuItem.Text = "&Programm";
             // 
+            // exit_item
+            // 
+            this.exit_item.Name = "exit_item";
+            this.exit_item.Size = new System.Drawing.Size(116, 26);
+            this.exit_item.Text = "&Exit";
+            // 
             // categoriesToolStripMenuItem
             // 
             this.categoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,6 +120,24 @@ namespace Goods_Catalog
             this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
             this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.categoriesToolStripMenuItem.Text = "&Categories";
+            // 
+            // categoryCreate_item
+            // 
+            this.categoryCreate_item.Name = "categoryCreate_item";
+            this.categoryCreate_item.Size = new System.Drawing.Size(203, 26);
+            this.categoryCreate_item.Text = "&Create category";
+            // 
+            // updateCategory_item
+            // 
+            this.updateCategory_item.Name = "updateCategory_item";
+            this.updateCategory_item.Size = new System.Drawing.Size(203, 26);
+            this.updateCategory_item.Text = "&Update category";
+            // 
+            // deleteCategory_item
+            // 
+            this.deleteCategory_item.Name = "deleteCategory_item";
+            this.deleteCategory_item.Size = new System.Drawing.Size(203, 26);
+            this.deleteCategory_item.Text = "&Delete category";
             // 
             // producersToolStripMenuItem
             // 
@@ -122,6 +149,24 @@ namespace Goods_Catalog
             this.producersToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.producersToolStripMenuItem.Text = "&Producers";
             // 
+            // createProducers_item
+            // 
+            this.createProducers_item.Name = "createProducers_item";
+            this.createProducers_item.Size = new System.Drawing.Size(205, 26);
+            this.createProducers_item.Text = "&Create producer";
+            // 
+            // updateProducers_item
+            // 
+            this.updateProducers_item.Name = "updateProducers_item";
+            this.updateProducers_item.Size = new System.Drawing.Size(205, 26);
+            this.updateProducers_item.Text = "&Update producer";
+            // 
+            // deleteProducers_item
+            // 
+            this.deleteProducers_item.Name = "deleteProducers_item";
+            this.deleteProducers_item.Size = new System.Drawing.Size(205, 26);
+            this.deleteProducers_item.Text = "&Delete producer";
+            // 
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -132,23 +177,23 @@ namespace Goods_Catalog
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.productsToolStripMenuItem.Text = "&Products";
             // 
-            // categoryCreate_item
+            // createProducts_item
             // 
-            this.categoryCreate_item.Name = "categoryCreate_item";
-            this.categoryCreate_item.Size = new System.Drawing.Size(224, 26);
-            this.categoryCreate_item.Text = "&Create category";
+            this.createProducts_item.Name = "createProducts_item";
+            this.createProducts_item.Size = new System.Drawing.Size(197, 26);
+            this.createProducts_item.Text = "&Create product";
             // 
-            // updateCategory_item
+            // updateProduct_item
             // 
-            this.updateCategory_item.Name = "updateCategory_item";
-            this.updateCategory_item.Size = new System.Drawing.Size(224, 26);
-            this.updateCategory_item.Text = "&Update category";
+            this.updateProduct_item.Name = "updateProduct_item";
+            this.updateProduct_item.Size = new System.Drawing.Size(197, 26);
+            this.updateProduct_item.Text = "&Update product";
             // 
-            // deleteCategory_item
+            // deleteProduct_item
             // 
-            this.deleteCategory_item.Name = "deleteCategory_item";
-            this.deleteCategory_item.Size = new System.Drawing.Size(224, 26);
-            this.deleteCategory_item.Text = "&Delete category";
+            this.deleteProduct_item.Name = "deleteProduct_item";
+            this.deleteProduct_item.Size = new System.Drawing.Size(197, 26);
+            this.deleteProduct_item.Text = "&Delete product";
             // 
             // aboutToolStripMenuItem
             // 
@@ -157,42 +202,6 @@ namespace Goods_Catalog
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "&About";
-            // 
-            // createProducers_item
-            // 
-            this.createProducers_item.Name = "createProducers_item";
-            this.createProducers_item.Size = new System.Drawing.Size(224, 26);
-            this.createProducers_item.Text = "&Create producer";
-            // 
-            // updateProducers_item
-            // 
-            this.updateProducers_item.Name = "updateProducers_item";
-            this.updateProducers_item.Size = new System.Drawing.Size(224, 26);
-            this.updateProducers_item.Text = "&Update producer";
-            // 
-            // deleteProducers_item
-            // 
-            this.deleteProducers_item.Name = "deleteProducers_item";
-            this.deleteProducers_item.Size = new System.Drawing.Size(224, 26);
-            this.deleteProducers_item.Text = "&Delete producer";
-            // 
-            // createProducts_item
-            // 
-            this.createProducts_item.Name = "createProducts_item";
-            this.createProducts_item.Size = new System.Drawing.Size(224, 26);
-            this.createProducts_item.Text = "&Create product";
-            // 
-            // updateProduct_item
-            // 
-            this.updateProduct_item.Name = "updateProduct_item";
-            this.updateProduct_item.Size = new System.Drawing.Size(224, 26);
-            this.updateProduct_item.Text = "&Update product";
-            // 
-            // deleteProduct_item
-            // 
-            this.deleteProduct_item.Name = "deleteProduct_item";
-            this.deleteProduct_item.Size = new System.Drawing.Size(224, 26);
-            this.deleteProduct_item.Text = "&Delete product";
             // 
             // author_button
             // 
@@ -204,7 +213,7 @@ namespace Goods_Catalog
             // 
             this.pictureBox1.Image = global::Goods_Catalog.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(21, 56);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(280, 137);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,34 +240,22 @@ namespace Goods_Catalog
             this.groupBox_filters.Controls.Add(this.category_comboBox);
             this.groupBox_filters.Controls.Add(this.label2);
             this.groupBox_filters.Location = new System.Drawing.Point(0, 203);
-            this.groupBox_filters.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox_filters.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox_filters.Name = "groupBox_filters";
-            this.groupBox_filters.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox_filters.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox_filters.Size = new System.Drawing.Size(788, 94);
             this.groupBox_filters.TabIndex = 4;
             this.groupBox_filters.TabStop = false;
             this.groupBox_filters.Text = "Filters";
             // 
-            // label2
+            // select_button
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(13, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Category:";
-            // 
-            // category_comboBox
-            // 
-            this.category_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.category_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.category_comboBox.FormattingEnabled = true;
-            this.category_comboBox.Location = new System.Drawing.Point(135, 36);
-            this.category_comboBox.Name = "category_comboBox";
-            this.category_comboBox.Size = new System.Drawing.Size(145, 33);
-            this.category_comboBox.TabIndex = 1;
+            this.select_button.Location = new System.Drawing.Point(652, 35);
+            this.select_button.Name = "select_button";
+            this.select_button.Size = new System.Drawing.Size(109, 34);
+            this.select_button.TabIndex = 4;
+            this.select_button.Text = "Select";
+            this.select_button.UseVisualStyleBackColor = true;
             // 
             // manufacturer_comboBox
             // 
@@ -281,14 +278,26 @@ namespace Goods_Catalog
             this.label3.TabIndex = 2;
             this.label3.Text = "Manufacturer:";
             // 
-            // select_button
+            // category_comboBox
             // 
-            this.select_button.Location = new System.Drawing.Point(652, 35);
-            this.select_button.Name = "select_button";
-            this.select_button.Size = new System.Drawing.Size(109, 34);
-            this.select_button.TabIndex = 4;
-            this.select_button.Text = "Select";
-            this.select_button.UseVisualStyleBackColor = true;
+            this.category_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.category_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.category_comboBox.FormattingEnabled = true;
+            this.category_comboBox.Location = new System.Drawing.Point(135, 36);
+            this.category_comboBox.Name = "category_comboBox";
+            this.category_comboBox.Size = new System.Drawing.Size(145, 33);
+            this.category_comboBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.Location = new System.Drawing.Point(13, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Category:";
             // 
             // groupBox1
             // 
@@ -299,85 +308,6 @@ namespace Goods_Catalog
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Goods list";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.order_button);
-            this.groupBox2.Controls.Add(this.inStock_textBox);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.price_textBox);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.name_textBox);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 542);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(763, 121);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Purple;
-            this.label4.Location = new System.Drawing.Point(8, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 29);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Name:";
-            // 
-            // name_textBox
-            // 
-            this.name_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_textBox.Location = new System.Drawing.Point(98, 34);
-            this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(100, 30);
-            this.name_textBox.TabIndex = 1;
-            // 
-            // price_textBox
-            // 
-            this.price_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price_textBox.Location = new System.Drawing.Point(382, 35);
-            this.price_textBox.Name = "price_textBox";
-            this.price_textBox.Size = new System.Drawing.Size(100, 30);
-            this.price_textBox.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Purple;
-            this.label5.Location = new System.Drawing.Point(292, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 29);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Price:";
-            // 
-            // inStock_textBox
-            // 
-            this.inStock_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inStock_textBox.Location = new System.Drawing.Point(640, 34);
-            this.inStock_textBox.Name = "inStock_textBox";
-            this.inStock_textBox.Size = new System.Drawing.Size(100, 30);
-            this.inStock_textBox.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Purple;
-            this.label6.Location = new System.Drawing.Point(534, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 29);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "In stock:";
-            // 
-            // order_button
-            // 
-            this.order_button.Location = new System.Drawing.Point(316, 71);
-            this.order_button.Name = "order_button";
-            this.order_button.Size = new System.Drawing.Size(144, 38);
-            this.order_button.TabIndex = 6;
-            this.order_button.Text = "Order";
-            this.order_button.UseVisualStyleBackColor = true;
             // 
             // Goods_list
             // 
@@ -427,11 +357,98 @@ namespace Goods_Catalog
             this.columnHeader6.Text = "Delivery";
             this.columnHeader6.Width = 105;
             // 
-            // exit_item
+            // groupBox2
             // 
-            this.exit_item.Name = "exit_item";
-            this.exit_item.Size = new System.Drawing.Size(224, 26);
-            this.exit_item.Text = "&Exit";
+            this.groupBox2.Controls.Add(this.order_button);
+            this.groupBox2.Controls.Add(this.inStock_textBox);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.price_textBox);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.name_textBox);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 542);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(763, 121);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // order_button
+            // 
+            this.order_button.Location = new System.Drawing.Point(316, 71);
+            this.order_button.Name = "order_button";
+            this.order_button.Size = new System.Drawing.Size(144, 38);
+            this.order_button.TabIndex = 6;
+            this.order_button.Text = "Order";
+            this.order_button.UseVisualStyleBackColor = true;
+            // 
+            // inStock_textBox
+            // 
+            this.inStock_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inStock_textBox.Location = new System.Drawing.Point(640, 34);
+            this.inStock_textBox.Name = "inStock_textBox";
+            this.inStock_textBox.Size = new System.Drawing.Size(100, 30);
+            this.inStock_textBox.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Purple;
+            this.label6.Location = new System.Drawing.Point(534, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 29);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "In stock:";
+            // 
+            // price_textBox
+            // 
+            this.price_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.price_textBox.Location = new System.Drawing.Point(382, 35);
+            this.price_textBox.Name = "price_textBox";
+            this.price_textBox.Size = new System.Drawing.Size(100, 30);
+            this.price_textBox.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Purple;
+            this.label5.Location = new System.Drawing.Point(292, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 29);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Price:";
+            // 
+            // name_textBox
+            // 
+            this.name_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_textBox.Location = new System.Drawing.Point(98, 34);
+            this.name_textBox.Name = "name_textBox";
+            this.name_textBox.Size = new System.Drawing.Size(100, 30);
+            this.name_textBox.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Purple;
+            this.label4.Location = new System.Drawing.Point(8, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 29);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Name:";
+            // 
+            // orders_item
+            // 
+            this.orders_item.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manage_item});
+            this.orders_item.Name = "orders_item";
+            this.orders_item.Size = new System.Drawing.Size(67, 24);
+            this.orders_item.Text = "&Orders";
+            // 
+            // manage_item
+            // 
+            this.manage_item.Name = "manage_item";
+            this.manage_item.Size = new System.Drawing.Size(224, 26);
+            this.manage_item.Text = "&Manage";
             // 
             // Form1
             // 
@@ -448,7 +465,7 @@ namespace Goods_Catalog
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Goods list";
@@ -507,6 +524,8 @@ namespace Goods_Catalog
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ToolStripMenuItem exit_item;
+        private System.Windows.Forms.ToolStripMenuItem orders_item;
+        private System.Windows.Forms.ToolStripMenuItem manage_item;
     }
 }
 
