@@ -125,20 +125,23 @@ namespace Goods_Catalog
             // categoryCreate_item
             // 
             this.categoryCreate_item.Name = "categoryCreate_item";
-            this.categoryCreate_item.Size = new System.Drawing.Size(203, 26);
+            this.categoryCreate_item.Size = new System.Drawing.Size(224, 26);
             this.categoryCreate_item.Text = "&Create category";
+            this.categoryCreate_item.Click += new System.EventHandler(this.categoryCreate_item_Click);
             // 
             // updateCategory_item
             // 
             this.updateCategory_item.Name = "updateCategory_item";
-            this.updateCategory_item.Size = new System.Drawing.Size(203, 26);
+            this.updateCategory_item.Size = new System.Drawing.Size(224, 26);
             this.updateCategory_item.Text = "&Update category";
+            this.updateCategory_item.Click += new System.EventHandler(this.updateCategory_item_Click);
             // 
             // deleteCategory_item
             // 
             this.deleteCategory_item.Name = "deleteCategory_item";
-            this.deleteCategory_item.Size = new System.Drawing.Size(203, 26);
+            this.deleteCategory_item.Size = new System.Drawing.Size(224, 26);
             this.deleteCategory_item.Text = "&Delete category";
+            this.deleteCategory_item.Click += new System.EventHandler(this.deleteCategory_item_Click);
             // 
             // producersToolStripMenuItem
             // 

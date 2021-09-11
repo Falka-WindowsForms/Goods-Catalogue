@@ -17,9 +17,15 @@ namespace Goods_Catalog
     {
         string connectionString;
         SqlConnection connection;
+        List<Category> Categories;
+        List<Producer> Producers;
+        List<Product> Products;
         public Form1()
         {
             InitializeComponent();
+            Products = new List<Product>();
+            Producers = new List<Producer>();
+            Categories = new List<Category>();
             connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             connection = new SqlConnection(connectionString);
         }
@@ -38,12 +44,14 @@ namespace Goods_Catalog
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sqlQuery,connection);
                 SqlDataReader reader = cmd.ExecuteReader();
-                
+                Categories.Clear();
+                category_comboBox.Items.Clear();
                 
                 while (reader.Read())
                 {
                     Category category = new Category() { Id = (int)reader["Id"],Name = reader["Name"].ToString() };
                     category_comboBox.Items.Add(category);
+                    Categories.Add(category);
                 }
                 category_comboBox.DisplayMember = "Name";
                 category_comboBox.ValueMember = "Id";
@@ -69,12 +77,13 @@ namespace Goods_Catalog
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sqlQuery, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
-
-
+                manufacturer_comboBox.Items.Clear();
+                Producers.Clear();
                 while (reader.Read())
                 {
                     Producer producer = new Producer() { Id = (int)reader["Id"], Name = reader["Name"].ToString() };
                     manufacturer_comboBox.Items.Add(producer);
+                    Producers.Add(producer);
                 }
                 manufacturer_comboBox.DisplayMember = "Name";
                 manufacturer_comboBox.ValueMember = "Id";
@@ -101,7 +110,7 @@ namespace Goods_Catalog
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sqlQuery, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
-
+                
 
                 while (reader.Read())
                 {
@@ -121,7 +130,7 @@ namespace Goods_Catalog
                     item.SubItems.Add(product.Measure);
                     item.SubItems.Add(product.Expire.ToShortDateString());
                     item.SubItems.Add(product.Delivery.ToString());
-
+                    Products.Add(product);
                 }
                 
             }
@@ -184,6 +193,77 @@ namespace Goods_Catalog
         private void exit_item_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void categoryCreate_item_Click(object sender, EventArgs e)
+        {
+           
+            CategoriesEditor categoriesEditor = new CategoriesEditor();
+            categoriesEditor.operationTitle = "Create category";
+            categoriesEditor.Categories = Categories;
+            
+            if (categoriesEditor.ShowDialog()==DialogResult.OK) {
+                string query = $"insert into Categories (Name) values (@p1)";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.Add("@p1", SqlDbType.NVarChar).Value = categoriesEditor.CategoryName;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Category added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                category_comboBox.Items.Clear();
+                LoadCategories();
+            }
+        }
+
+        private void updateCategory_item_Click(object sender, EventArgs e)
+        {
+            CategoriesEditor categoriesEditor = new CategoriesEditor();
+            categoriesEditor.operationTitle = "Change category";
+            categoriesEditor.Categories = Categories;
+            categoriesEditor.CategoryName = (category_comboBox.SelectedItem as Category).Name;
+            int id = (category_comboBox.SelectedItem as Category).Id;
+            if (categoriesEditor.ShowDialog() == DialogResult.OK)
+            {
+                string query = $"update Categories set Name = @p1 where Id = @p2";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.Add("@p1", SqlDbType.NVarChar).Value = categoriesEditor.CategoryName;
+                cmd.Parameters.Add("@p2", SqlDbType.Int).Value = id;
+                
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Category updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                category_comboBox.Items.Clear();
+                LoadCategories();
+            }
+        }
+
+        private void deleteCategory_item_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CategoriesEditor categoriesEditor = new CategoriesEditor();
+                categoriesEditor.operationTitle = "Delete category";
+                categoriesEditor.Categories = Categories;
+                categoriesEditor.CategoryName = (category_comboBox.SelectedItem as Category).Name;
+                int id = (category_comboBox.SelectedItem as Category).Id;
+                if (categoriesEditor.ShowDialog() == DialogResult.OK)
+                {
+                    string query = $"delete from Categories where Id = @p2";
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.Add("@p2", SqlDbType.Int).Value = id;
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Category deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    category_comboBox.Items.Clear();
+                    LoadCategories();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Can not delete category. There is items that using this category", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
