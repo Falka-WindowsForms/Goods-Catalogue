@@ -13,7 +13,10 @@ namespace Goods_Catalog
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        { 
+            LoginWindow lw = new LoginWindow();
+            lw.ShowDialog();
+            //InitializeComponent();
             InitializeComponent();
         }
 
