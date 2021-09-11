@@ -23,13 +23,12 @@ namespace Goods_Catalog
             connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             connection = new SqlConnection(connectionString);
         }
-
-        
         private void Form1_Load(object sender, EventArgs e)
         {
             //AuthUser();
             LoadCategories();
             LoadProducers();
+            LoadProducts();
         }
         private void LoadCategories()
         {
@@ -83,6 +82,48 @@ namespace Goods_Catalog
                 {
                     manufacturer_comboBox.SelectedIndex = 0;
                 }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+        private void LoadProducts()
+        {
+            try
+            {
+                string sqlQuery = $"select * from Products";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    Product product= new Product();
+                    product.Id = (int)reader["Id"];
+                    product.Name = reader["Name"].ToString();
+                    product.CategoryId = (int)reader["CategoryId"];
+                    product.ProducerId = (int)reader["ProducerId"];
+                    product.Price = Double.Parse(reader["Price"].ToString());
+                    product.Count = (int)reader["Count"];
+                    product.Measure = reader["Measure"].ToString();
+                    product.Expire = (DateTime)reader["Expire"];
+                    product.Delivery = reader["Delivery"].ToString();
+                    var item = Goods_list.Items.Add(product.Name);
+                    item.SubItems.Add(product.Price.ToString("F"));
+                    item.SubItems.Add(product.Count.ToString());
+                    item.SubItems.Add(product.Measure);
+                    item.SubItems.Add(product.Expire.ToShortDateString());
+                    item.SubItems.Add(product.Delivery.ToString());
+
+                }
+                
             }
             catch (Exception err)
             {

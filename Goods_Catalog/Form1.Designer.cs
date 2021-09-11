@@ -334,6 +334,7 @@ namespace Goods_Catalog
             this.columnHeader5,
             this.columnHeader6});
             this.Goods_list.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Goods_list.FullRowSelect = true;
             this.Goods_list.HideSelection = false;
             this.Goods_list.Location = new System.Drawing.Point(3, 30);
             this.Goods_list.Name = "Goods_list";
@@ -345,12 +346,12 @@ namespace Goods_Catalog
             // columnHeader1
             // 
             this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 305;
+            this.columnHeader1.Width = 135;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Price";
-            this.columnHeader2.Width = 80;
+            this.columnHeader2.Width = 135;
             // 
             // columnHeader3
             // 
@@ -360,12 +361,12 @@ namespace Goods_Catalog
             // columnHeader4
             // 
             this.columnHeader4.Text = "Unit";
-            this.columnHeader4.Width = 67;
+            this.columnHeader4.Width = 110;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "shelf life";
-            this.columnHeader5.Width = 117;
+            this.columnHeader5.Width = 163;
             // 
             // columnHeader6
             // 
