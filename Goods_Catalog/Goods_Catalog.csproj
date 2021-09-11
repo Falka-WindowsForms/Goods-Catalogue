@@ -80,6 +80,8 @@
     <Compile Include="LoginWindow.Designer.cs">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Producer.cs" />
     <Compile Include="OrdersEditor.cs">
       <SubType>Form</SubType>
     </Compile>
