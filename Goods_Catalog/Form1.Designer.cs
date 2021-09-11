@@ -108,7 +108,7 @@ namespace Goods_Catalog
             // exit_item
             // 
             this.exit_item.Name = "exit_item";
-            this.exit_item.Size = new System.Drawing.Size(224, 26);
+            this.exit_item.Size = new System.Drawing.Size(116, 26);
             this.exit_item.Text = "&Exit";
             this.exit_item.Click += new System.EventHandler(this.exit_item_Click);
             // 
@@ -470,6 +470,7 @@ namespace Goods_Catalog
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Goods list";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
